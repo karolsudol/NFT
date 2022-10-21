@@ -2,14 +2,18 @@ import { time, loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
 import { expect } from "chai";
 import { ethers } from "hardhat";
-import { NFTCollectible } from "../typechain";
-// import { NFTCollectible } from "../src/typechain-types/contracts/NFTCollectible";
+import { formatEther, parseEther } from "ethers/lib/utils";
 import type { SignerWithAddress   } from "@nomiclabs/hardhat-ethers/signers";
 
-describe("NFTCollectible", function () {
-  let contract : NFTCollectible;
-  let owner : SignerWithAddress;
-  let addr1 : SignerWithAddress;
+describe("NFTcollectible", function () {
+  async function deploy() {
+    const [owner, acc1, acc2] = await ethers.getSigners();
+    const NFT = await ethers.getContractFactory("NFTCollectible");
+    const nft = await NFT.deploy();
+
+    return { owner, acc1, acc2, nft };
+  }
+ 
 }
 
 // describe("Lock", function () {
