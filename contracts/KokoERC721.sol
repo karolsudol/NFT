@@ -7,7 +7,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract KokoERC721 is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
-    Counters.Counter private _tokenIds;
+    Counters.Counter public _tokenIds;
+    event NFTMinted(uint256 indexed _id);
 
     constructor() ERC721("KokoERC721", "KOK") {}
 
@@ -16,12 +17,12 @@ contract KokoERC721 is ERC721URIStorage, Ownable {
         onlyOwner
         returns (uint256)
     {
+        _tokenIds.increment();
         uint256 newItemId = _tokenIds.current();
         _mint(tokeHolder, newItemId);
         _setTokenURI(newItemId, tokenURI);
 
-        _tokenIds.increment();
+        emit NFTMinted(newItemId);
         return newItemId;
     }
 }
-
