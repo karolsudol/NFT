@@ -6,6 +6,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
+// import "@openzeppelin/contracts/utils/Strings.sol";
+
 contract KokoERC721collection is ERC721Enumerable, Ownable {
     using SafeMath for uint256;
     using Counters for Counters.Counter;
@@ -25,6 +27,13 @@ contract KokoERC721collection is ERC721Enumerable, Ownable {
     function setBaseURI(string memory _baseTokenURI) public {
         baseTokenURI = _baseTokenURI;
     }
+
+    // /**
+    //  * @dev Returns an URI for a given token ID
+    //  */
+    // function tokenURI(uint256 _tokenId) public view returns (string) {
+    //     return Strings.strConcat(baseTokenURI(), Strings.uint2str(_tokenId));
+    // }
 
     function mintNFTs(uint _count) public payable {
         uint totalMinted = _tokenCounter.current();

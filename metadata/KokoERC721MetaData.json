@@ -1,0 +1,11 @@
+{
+  "name": "Koko Collection",
+  "description": "Never drink coffee that has been anywhere near a fish.",
+  "image": "https://ipfs.io/ipfs/QmZPHoUR1hy5RgrjqMp7pZXx3wFM56kB5qaMGYingfEeNS/koko.png",
+  "attributes": [
+    {
+      "trait_type": "Personality",
+      "value": "Mysterious"
+    }
+  ]
+}

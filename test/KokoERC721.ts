@@ -23,18 +23,14 @@ describe("KokoERC721", function () {
         nft.connect(acc1).awardItem(acc1.address, tokenURI)
       ).to.be.revertedWith("Ownable: caller is not the owner");
     });
-    it("Should awardItem correctly to 1", async function () {
+    it("Should awardItem correctly and set counter to 1", async function () {
       const { nft, owner, tokenURI, acc1 } = await loadFixture(deployNFT);
 
       await expect(nft.connect(owner).awardItem(acc1.address, tokenURI))
         .to.emit(nft, "NFTMinted")
         .withArgs(1);
 
-      expect(await nft.connect(owner).awardItem(acc1.address, tokenURI))
-        .to.emit(nft, "NFTMinted")
-        .withArgs(1);
-
-      // expect(await nft._tokenIds).to.equal(1);
+      expect(await nft._tokenIds()).to.equal(1);
     });
   });
 });
