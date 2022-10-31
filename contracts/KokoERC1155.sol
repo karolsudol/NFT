@@ -12,7 +12,7 @@ contract KokoERC1155 is ERC1155, Ownable {
 
     event NFTMinted(uint256 indexed _id);
 
-    constructor() ERC1155("") {}
+    constructor() ERC1155("KokoERC1155") {}
 
     function _setTokenURI(uint256 tokenId, string memory _tokenURI)
         internal
