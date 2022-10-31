@@ -7,8 +7,10 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract KokoERC1155 is ERC1155, Ownable {
     using Counters for Counters.Counter;
-    Counters.Counter private _tokenIds;
+    Counters.Counter public _tokenIds;
     mapping(uint256 => string) private _tokenURIs;
+
+    event NFTMinted(uint256 indexed _id);
 
     constructor() ERC1155("") {}
 
@@ -28,6 +30,7 @@ contract KokoERC1155 is ERC1155, Ownable {
         uint256 newItemId = _tokenIds.current();
         _mint(recipient, newItemId, 1, "");
         _setTokenURI(newItemId, _tokenURI);
+        emit NFTMinted(newItemId);
         return newItemId;
     }
 }
