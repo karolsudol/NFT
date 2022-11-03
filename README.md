@@ -5,9 +5,11 @@ This project demonstrates a basic Hardhat use case. It comes with a sample contr
 Try running some of the following tasks:
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
+npx hardhat run --network goerli scripts/deployERC721.ts
+npx hardhat verify --network goerli 0xB2C25d990f4FC8521Ba4Ca8dcd3E4800BDC61b5A
+`https://goerli.etherscan.io/address/0xB2C25d990f4FC8521Ba4Ca8dcd3E4800BDC61b5A#code`
+
+npx hardhat run --network goerli scripts/deployERC1155.ts
+npx hardhat verify --network goerli 0x1176b276Fd237A5fdF86a165EEA4621E776Cab52
+`ttps://goerli.etherscan.io/address/0x1176b276Fd237A5fdF86a165EEA4621E776Cab52#code`
 ```
