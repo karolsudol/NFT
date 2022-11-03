@@ -9,7 +9,7 @@ console.log(NFT_CONTRACT);
 
 task("mintNFT", "mint a NFT ERC1155")
   .addParam("recipient", "recipient address")
-  .addParam("_tokenURI", "ipfs metadata location")
+  .addParam("tokenuri", "ipfs metadata location")
   .setAction(async (taskArgs: { recipient: any; _tokenURI: any }, hre) => {
     const nft = await hre.ethers.getContractAt("KokoERC1155", NFT_CONTRACT);
     await nft.mintNFT(taskArgs.recipient, taskArgs._tokenURI);

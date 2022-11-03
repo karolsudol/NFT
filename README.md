@@ -11,5 +11,8 @@ npx hardhat verify --network goerli 0xB2C25d990f4FC8521Ba4Ca8dcd3E4800BDC61b5A
 
 npx hardhat run --network goerli scripts/deployERC1155.ts
 npx hardhat verify --network goerli 0x1176b276Fd237A5fdF86a165EEA4621E776Cab52
-`ttps://goerli.etherscan.io/address/0x1176b276Fd237A5fdF86a165EEA4621E776Cab52#code`
+`https://goerli.etherscan.io/address/0x1176b276Fd237A5fdF86a165EEA4621E776Cab52#code`
+
+
+`https://testnets.opensea.io/assets/goerli/0xb2c25d990f4fc8521ba4ca8dcd3e4800bdc61b5a/1`
 ```
