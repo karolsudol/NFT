@@ -1,4 +1,4 @@
-# TokenERC20
+# NFT COLLECTION
 
 - A `hardhat` unit tested `ERC-721` and `ERC-1155` contracts that has been 100% covared with `mint/burn` features for contract creator without using libraries.
 - The contracts conform to the `ERC-721` and `ERC-1155` as includes all the functions and events described in the standard, while keeping their names.
